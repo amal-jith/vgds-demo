@@ -246,7 +246,7 @@ body{
     width: 36rem;
     left: 0rem;
     border: 1px solid rgba(255, 255, 255, 0.20);
-    background: rgba(255, 255, 255, 0.10);
+    background: rgba(0, 0, 0, 0.80);
     backdrop-filter: blur(13.396551132202148px);
     border-radius: 0.51725rem;
     padding: 1.29313rem;
