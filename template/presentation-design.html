@@ -1,0 +1,461 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Presentation Design - VGDS{% endblock %}
+
+      {% block content %}
+
+<!--Home Navbar  -->
+
+<nav class="navbar navbar-expand-lg fixed-top transparent d-none d-lg-flex">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+        <!-- White logo (default) -->
+        <img src="{% static 'images/vgds-white-logo.png' %}" alt="Bootstrap" class="logo logo-white" id="navbarLogo">
+
+        <!-- Colored logo (hidden initially) -->
+        <img src="{% static 'images/vgds-logo-2.png' %}" class="logo logo-colored d-none" alt="Logo">
+    </a>
+<!--    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--      <span class="navbar-toggler-icon"></span>-->
+<!--    </button>-->
+    <div class="collapse navbar-collapse justify-content-center" id="navbarText">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'projectapp:ourWorks' %}">Our Work</a>
+        </li>
+        <li class="nav-item dropdown custom-dropdown">
+          <a class="nav-link dropdown-toggle" href="{% url 'projectapp:services' %}">Services</a>
+            <div class="dropdown-menu mega-dropdown">
+                <div class="row">
+                  <div class="col-md-4">
+                    <a href="{% url 'projectapp:presentation_design' %}" class="dropdown-card">
+                      <img src="{% static 'images/sol1.jpg' %}" class="img-fluid" alt="Presentation Design">
+                      <p class="dropdown-title">Presentation Design</p>
+                    </a>
+                  </div>
+                  <div class="col-md-4">
+                    <a href="{% url 'projectapp:graphics' %}" class="dropdown-card">
+                      <img src="{% static 'images/sol2.jpg' %}" class="img-fluid" alt="Graphics & Print Design">
+                      <p class="dropdown-title">Graphics & Print Design</p>
+                    </a>
+                  </div>
+                  <div class="col-md-4">
+                    <a href="{% url 'projectapp:otherServices' %}" class="dropdown-card">
+                      <img src="{% static 'images/sol3.jpg' %}" class="img-fluid" alt="Other Services">
+                      <p class="dropdown-title">Other Services</p>
+                    </a>
+                  </div>
+                </div>
+            </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'projectapp:solutions' %}">Solutions</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'projectapp:testimonials' %}">Testimonials</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'projectapp:pricing' %}">Pricing</a>
+        </li>
+<!--                <li class="nav-item">-->
+<!--                  <a class="nav-link" href="#">About Us</a>-->
+<!--                </li>-->
+      </ul>
+
+        <!-- Mobile Order Now button -->
+      <div class="d-lg-none mt-3">
+        <a href="{% url 'projectapp:orderFlow' %}" type="button" class="btn order-button-nav">Order Now</a>
+      </div>
+
+    </div>
+
+    <!-- Order Now Button -->
+    <div class="d-none d-lg-block">
+<!--                <a href="#" type="button" class="btn order-button-nav" data-bs-toggle="modal" data-bs-target="#orderModalTreatment">Order Now</a>-->
+      <a href="{% url 'projectapp:orderFlow' %}" type="button" class="btn order-button-nav" >Order Now</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile/Tablet Offcanvas Navbar (visible < lg) -->
+<nav class="navbar fixed-top d-lg-none white-bg">
+  <div class="container d-flex justify-content-between align-items-center">
+    <a class="navbar-brand" href="/">
+      <img src="{% static 'images/vgds-white-logo.png' %}" class="logo logo-white d-none" alt="Logo">
+      <img src="{% static 'images/vgds-logo-2.png' %}" class="logo logo-colored" alt="Logo">
+    </a>
+    <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNav" aria-controls="mobileNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Offcanvas Menu -->
+<div class="offcanvas offcanvas-end d-lg-none" tabindex="-1" id="mobileNav" aria-labelledby="mobileNavLabel">
+  <div class="offcanvas-header">
+    <a class="navbar-brand" href="/">
+        <!-- Colored logo (hidden initially) -->
+        <img src="{% static 'images/vgds-logo-2.png' %}" class="logo" alt="Logo">
+    </a>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="navbar-nav">
+      <li class="nav-item"><a class="nav-link offcanvas-item" href="{% url 'projectapp:ourWorks' %}">Our Work</a></li>
+      <li class="nav-item">
+        <a class="nav-link offcanvas-item" data-bs-toggle="collapse" href="#offcanvasServices" role="button" aria-expanded="false" aria-controls="offcanvasServices">
+          Services
+        </a>
+        <div class="collapse ps-3" id="offcanvasServices">
+          <ul class="list-unstyled">
+            <li><a href="{% url 'projectapp:services' %}" class="nav-link offcanvas-item">Services</a></li>
+            <li>
+                <a href="{% url 'projectapp:presentation_design' %}" class="off-card mt-1">
+                  <img src="{% static 'images/sol1.jpg' %}" class="img-fluid" alt="Presentation Design">
+                  <p class="dropdown-title offcanvas-item">Presentation Design</p>
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'projectapp:graphics' %}" class="off-card mt-1">
+                  <img src="{% static 'images/sol2.jpg' %}" class="img-fluid" alt="Graphics & Print Design">
+                  <p class="dropdown-title offcanvas-item">Graphics & Print Design</p>
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'projectapp:otherServices' %}" class="off-card mt-1">
+                  <img src="{% static 'images/sol3.jpg' %}" class="img-fluid" alt="Other Services">
+                  <p class="dropdown-title offcanvas-item">Other Services</p>
+                </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class="nav-item"><a class="nav-link offcanvas-item" href="{% url 'projectapp:solutions' %}">Solutions</a></li>
+      <li class="nav-item"><a class="nav-link offcanvas-item" href="{% url 'projectapp:testimonials' %}">Testimonials</a></li>
+      <li class="nav-item"><a class="nav-link offcanvas-item" href="{% url 'projectapp:pricing' %}">Pricing</a></li>
+      <li class="nav-item mt-3">
+        <a href="{% url 'projectapp:orderFlow' %}" class="btn btn-primary w-100">Order Now</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!--END NAVBAR-->
+
+        <div class="white-section">
+
+          <div class="card sub-service-hero" style="background-image: url('{% static 'images/cover-other.jpg' %}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+            <div class="container p-0">
+              <div class="row row-cols-1 row-cols-md-2 g-4">
+                <div class="col-md-7 d-flex align-items-center">
+                  <div class="card other-hero-card">
+                    <div class="card-body">
+                      <h1 class="sub-service-hero-title">Presentation Design</h1>
+                      <h1 class="sub-service-hero-subtitle">Persuasive Slides. Powerful Impact.</h1>
+                      <p class="sub-service-hero-desc">
+                        Transform your ideas into powerful presentations that captivate and persuade.
+                        Our designs are tailored to your brand identity, ensuring a polished, cohesive, and memorable impact.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-5 d-flex align-items-center justify-content-center">
+                  <div class="card other-hero-card-img">
+                    <div class="inner-bg-div" style="background-image: url('{% static 'images/51435002.png' %}');"></div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+
+          <div class="card service-card-white">
+            <div class="container p-0">
+
+              <div class="row row-cols-1 row-cols-md-2 g-4">
+                  <div class="col-md-7">
+                    <div class="card card-1" style="">
+                      <div class="card-body">
+                        <h2 class="service-card-title">Business Presentations</h2>
+                        <p class="service-card-subtitle-italics">Persuasive Slides. Powerful Impact.</p>
+                        <p class="service-card-subtitle mb-5">Transform your ideas into powerful presentations that captivate
+                          and persuade. Our designs are tailored to your brand identity, ensuring a polished, cohesive,
+                          and memorable impact.</p>
+                        <div class="row row-cols-1 row-cols-md-2 custom-gap" style="--bs-gutter-x: 2.5rem; --bs-gutter-y: 2.5rem;">
+                          <div class="col">
+                            <div class="service-box d-flex align-items-start gap-3">
+                              <img src="{% static 'icons/brain-circuit.svg' %}" style="height: 1.5rem; width: 1.5rem;">
+                              <div>
+                                <h6 class="service-box-title mb-1">Strategy and Consulting</h6>
+                                <p class="service-box-subtitle mb-0">
+                                  We take the time to understand your goals and challenges, delivering solutions tailored to your needs.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="service-box d-flex align-items-start gap-3">
+                              <img src="{% static 'icons/building-2.svg' %}" style="height: 1.5rem; width: 1.5rem;">
+                              <div>
+                                <h6 class="service-box-title mb-1">Company Profile</h6>
+                                <p class="service-box-subtitle mb-0">
+                                  We take the time to understand your goals and challenges, delivering solutions tailored to your needs.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="service-box d-flex align-items-start gap-3">
+                              <img src="{% static 'icons/percent.svg' %}" style="height: 1.5rem; width: 1.5rem;">
+                              <div>
+                                <h6 class="service-box-title mb-1">Sales Pitch Deck</h6>
+                                <p class="service-box-subtitle mb-0">
+                                  We take the time to understand your goals and challenges, delivering solutions tailored to your needs.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="service-box d-flex align-items-start gap-3">
+                              <img src="{% static 'icons/megaphone.svg' %}" style="height: 1.5rem; width: 1.5rem;">
+                              <div>
+                                <h6 class="service-box-title mb-1">Marketing</h6>
+                                <p class="service-box-subtitle mb-0">
+                                  We take the time to understand your goals and challenges, delivering solutions tailored to your needs.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="service-box d-flex align-items-start gap-3">
+                              <img src="{% static 'icons/graduation-cap.svg' %}" style="height: 1.5rem; width: 1.5rem;">
+                              <div>
+                                <h6 class="service-box-title mb-1">Training</h6>
+                                <p class="service-box-subtitle mb-0">
+                                  We take the time to understand your goals and challenges, delivering solutions tailored to your needs.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="service-box d-flex align-items-start gap-3">
+                              <img src="{% static 'icons/headset.svg' %}" style="height: 1.5rem; width: 1.5rem;">
+                              <div>
+                                <h6 class="service-box-title mb-1">Conference</h6>
+                                <p class="service-box-subtitle mb-0">
+                                  We take the time to understand your goals and challenges, delivering solutions tailored to your needs.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="service-box d-flex align-items-start gap-3">
+                              <img src="{% static 'icons/calendar-1.svg' %}" style="height: 1.5rem; width: 1.5rem;">
+                              <div>
+                                <h6 class="service-box-title mb-1">Event </h6>
+                                <p class="service-box-subtitle mb-0">
+                                  We take the time to understand your goals and challenges, delivering solutions tailored to your needs.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="service-box d-flex align-items-start gap-3">
+                              <img src="{% static 'icons/tickets.svg' %}" style="height: 1.5rem; width: 1.5rem;">
+                              <div>
+                                <h6 class="service-box-title mb-1">Webinar</h6>
+                                <p class="service-box-subtitle mb-0">
+                                  We take the time to understand your goals and challenges, delivering solutions tailored to your needs.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-5 col-bg-image">
+                    <div class="bg-image-box-2" style=" background-image: url('{% static 'images/pres1.jpg' %}');"></div>
+                  </div>
+                </div>
+
+            </div>
+          </div>
+
+          <div class="card service-section">
+            <div class="container p-0">
+              <div class="card-body p-0">
+                <div class="row row-cols-1 row-cols-md-2 g-4">
+                  <div class="col-md-6">
+                    <div class="bg-cover-about-2" style="background-image: url('{% static 'images/service2.jpg' %}');"></div>
+                  </div>
+                  <div class="col-md-6 d-flex justify-content-end align-items-center">
+                    <div class="card-body card-body-2">
+                      <h2 class="service-card-title">Investor Pitch Decks</h2>
+                        <p class="service-card-subtitle-italics">Consistent Branding. Effortless Presentations.</p>
+                        <p class="service-card-subtitle mb-5">Win investor confidence with pitch decks that tell your story convincingly.
+                          We design persuasive, data-driven slides highlighting your vision, growth potential, and value proposition, m
+                          aximizing your chances of securing funding.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card service-card-white">
+            <div class="container p-0">
+              <div class="card-body">
+                <div class="row row-cols-1 row-cols-md-2 g-4">
+                  <div class="col-md-7 d-flex justify-content-end align-items-center">
+                    <div class="card-body">
+                      <h2 class="service-card-title">Templates & Formats</h2>
+                        <p class="service-card-subtitle-italics">Consistent Branding. Effortless Presentations.</p>
+                        <p class="service-card-subtitle mb-5">Maintain brand consistency with custom-designed, fully editable
+                          templates. Our PowerPoint and Google Slides templates empower your team to create professional presentations
+                          efficiently while staying true to your brand identity
+                        </p>
+                      <div class="row row-cols-1 row-cols-md-2 custom-gap" style="--bs-gutter-x: 2.5rem; --bs-gutter-y: 2.5rem;">
+                          <div class="col">
+                            <div class="service-box d-flex align-items-start gap-3">
+                              <img src="{% static 'icons/file-icons_microsoft-powerpoint.svg' %}" style="height: 1.5rem; width: 1.5rem;">
+                              <div>
+                                <h6 class="service-box-title mb-1">PowerPoint Template</h6>
+                                <p class="service-box-subtitle mb-0">
+                                  Streamline presentation creation with branded, reusable slides.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="service-box d-flex align-items-start gap-3">
+                              <img src="{% static 'icons/simple-icons_googleslides.svg' %}" style="height: 1.5rem; width: 1.5rem;">
+                              <div>
+                                <h6 class="service-box-title mb-1">Google Slides</h6>
+                                <p class="service-box-subtitle mb-0">
+                                  Collaborate effortlessly with cohesive and editable Google Slide templates.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-5">
+                    <div class="bg-cover-about-2" style="background-image: url('{% static 'images/Group626963.png' %}');"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+         <div class="card service-section">
+            <div class="container p-0">
+              <div class="card-body p-0">
+                <div class="row row-cols-1 row-cols-md-2 g-4">
+                  <div class="col-md-6">
+                    <div class="bg-cover-about-3" style="background-image: url('{% static 'images/serv12.jpg' %}');"></div>
+                  </div>
+                  <div class="col-md-6 d-flex justify-content-end align-items-center">
+                    <div class="card-body">
+                      <h2 class="service-card-title">Interactive & Video Presentations</h2>
+                        <p class="service-card-subtitle-italics">Engage. Impress. Inspire.</p>
+                        <p class="service-card-subtitle mb-5">Maintain brand consistency with custom-designed, fully editable templates.
+                          Our PowerPoint and Google Slides templates empower your team to create professional presentations efficiently
+                          while staying true to your brand identity</p>
+                      <div class="row row-cols-1 row-cols-md-2 custom-gap" style="--bs-gutter-x: 2.5rem; --bs-gutter-y: 2.5rem;">
+                          <div class="col">
+                            <div class="service-box d-flex align-items-start gap-3">
+                              <img src="{% static 'icons/presentation.svg' %}" style="height: 1.5rem; width: 1.5rem;">
+                              <div>
+                                <h6 class="service-box-title mb-1">PowerPoint Videos</h6>
+                                <p class="service-box-subtitle mb-0">
+                                  We take the time to understand your goals and challenges, delivering solutions tailored to your needs.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="service-box d-flex align-items-start gap-3">
+                              <img src="{% static 'icons/square-mouse-pointer.svg' %}" style="height: 1.5rem; width: 1.5rem;">
+                              <div>
+                                <h6 class="service-box-title mb-1">Interactive PowerPoint</h6>
+                                <p class="service-box-subtitle mb-0">
+                                  We take the time to understand your goals and challenges, delivering solutions tailored to your needs.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="service-box d-flex align-items-start gap-3">
+                              <img src="{% static 'icons/file-chart-pie.svg' %}" style="height: 1.5rem; width: 1.5rem;">
+                              <div>
+                                <h6 class="service-box-title mb-1">Dashboard Design</h6>
+                                <p class="service-box-subtitle mb-0">
+                                  We take the time to understand your goals and challenges, delivering solutions tailored to your needs.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+      <div class="white-section" id="faq-section">
+            <div class="card faq-card-other">
+                <div class="container p-0">
+                    <div class="card-body p-0 card-body-1">
+                        <div class="row g-2">
+                            <div class="col-md-6"><h5 class="faq-title">Frequently<br> Asked Questions</h5></div>
+
+                            <div class="col-md-6">
+
+                                <div class="faq-wrapper" id="faqWrapper">
+                                <div class="accordion transition-expand" id="faqAccordion">
+                                    <div id="faq-container">
+                                        {% for faq in faqs %}
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="heading{{ forloop.counter }}">
+                                                <button class="accordion-button {% if not forloop.first %}collapsed{% endif %}" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapse{{ forloop.counter }}"
+                                                        aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}">
+                                                    {{ faq.question }}
+                                                </button>
+                                            </h2>
+                                            <div id="collapse{{ forloop.counter }}" class="accordion-collapse collapse {% if forloop.first %}show{% endif %}"
+                                                 data-bs-parent="#faqAccordion">
+                                                <div class="accordion-body">
+                                                    {{ faq.answer }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                </div>
+
+                                <div class="text-center">
+                                    <button class="learn-more-1 d-inline-flex align-items-center" id="load-more">
+                                    Load More
+                                  <img src="{% static 'icons/down.svg' %}" alt="Arrow" class="ms-2" width="20" height="20">
+                                </button>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+      {% endblock %}

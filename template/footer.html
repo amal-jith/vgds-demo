@@ -1,0 +1,77 @@
+
+{% load static %}
+
+<div class="hr-line"></div>
+
+<footer class="white-section">
+    <div class="container p-0">
+        <div class="card footer-card">
+            <div class="card-body p-0 card-body-1">
+                <div class="row row-cols-1 row-cols-md-4 g-2">
+                    <div class="col">
+                        <div class="card element-card" style="max-width: 16.75rem;">
+                          <img src="{% static 'images/vgds-logo-2.png' %}" class="footer-logo" alt="...">
+                          <div class="card-body p-0">
+                            <p class="card-text">
+                                <a href="#" class="social-links" target="_blank">
+                                    <img width="24" height="24" src="https://img.icons8.com/ios/50/twitterx--v2.png" alt="twitterx--v2"/>
+                                </a>
+                                <a href="#" class="social-links" target="_blank">
+                                     <img width="24" height="24" src="https://img.icons8.com/ios/50/instagram-new.png" alt="instagram-new"/>
+                                </a>
+                                <a href="#" class="social-links" target="_blank">
+                                    <img width="24" height="24" src="https://img.icons8.com/ios-glyphs/30/youtube-play.png" alt="youtube-play"/>
+                                </a>
+                                <a href="#" class="social-links" target="_blank">
+                                    <img width="24" height="24" src="https://img.icons8.com/ios-glyphs/30/linkedin.png" alt="linkedin"/>
+                                </a>
+
+                            </p>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card element-card" style="max-width: 16.75rem;">
+                          <div class="card-body p-0">
+                              <h5 class="nav-head">Our Services</h5>
+                              <a href="{% url 'projectapp:presentation_design' %}" class="footer-link">Presentation Design</a>
+                              <a href="{% url 'projectapp:graphics' %}" class="footer-link">Graphic Design</a>
+                              <a href="{% url 'projectapp:otherServices' %}" class="footer-link">Dedicated Design Team</a>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card element-card" style="max-width: 16.75rem;">
+                          <div class="card element-card" style="max-width: 16.75rem;">
+                          <div class="card-body p-0">
+                              <h5 class="nav-head">Our Solutions</h5>
+                              <a href="{% url 'projectapp:solutions' %}#presentation-experts-on-demand" class="footer-link">Presentation Experts on Demand</a>
+                              <a href="{% url 'projectapp:solutions' %}#overnight-presentation" class="footer-link">Overnight Presentation</a>
+                              <a href="{% url 'projectapp:solutions' %}#dedicated-design-team-subscription" class="footer-link">Dedicated Design Team Subscription</a>
+                          </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card element-card" style="max-width: 16.75rem;">
+                          <div class="card element-card" style="max-width: 16.75rem;">
+                          <div class="card-body p-0">
+                              <a href="#" class="footer-link"><img class="footer-contact" src="{% static 'icons/ic_baseline-email.svg' %}">info@vgdsglobal.com</a>
+                              <a href="#" class="footer-link"><img class="footer-contact" src="{% static 'icons/basil_phone-solid.svg' %}">+91 7306857192</a>
+                              <a href="#" class="footer-link"><img class="footer-contact" src="{% static 'icons/weui_location-filled.svg' %}">1st floor, 12/475 – C3,
+                                Hannas Arcade, Mooliyam Junction, SA Road, Thrippunithura,Cochin, Kerala, India.</a>
+                          </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div class="hr-line"></div>
+
+<div class="white-section">
+    <div class="text-center bg-white py-3">2025 <span>&#169;</span> <a href="{% url 'projectapp:home' %}" class="noLink">VGDS</a> </div>
+</div>

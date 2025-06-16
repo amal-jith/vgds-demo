@@ -1,0 +1,70 @@
+<nav class="navbar navbar-expand-lg fixed-top transparent d-none d-lg-flex">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+        <!-- White logo (default) -->
+        <img src="{% static 'images/vgds-white-logo.png' %}" alt="Bootstrap" class="logo logo-white" id="navbarLogo">
+
+        <!-- Colored logo (hidden initially) -->
+        <img src="{% static 'images/vgds-logo-2.png' %}" class="logo logo-colored d-none" alt="Logo">
+    </a>
+<!--    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--      <span class="navbar-toggler-icon"></span>-->
+<!--    </button>-->
+    <div class="collapse navbar-collapse justify-content-center" id="navbarText">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'projectapp:ourWorks' %}">Our Work</a>
+        </li>
+        <li class="nav-item dropdown custom-dropdown">
+          <a class="nav-link dropdown-toggle" href="{% url 'projectapp:services' %}">Services</a>
+            <div class="dropdown-menu mega-dropdown">
+                <div class="row">
+                  <div class="col-md-4">
+                    <a href="{% url 'projectapp:presentation_design' %}" class="dropdown-card">
+                      <img src="{% static 'images/sol1.jpg' %}" class="img-fluid" alt="Presentation Design">
+                      <p class="dropdown-title">Presentation Design</p>
+                    </a>
+                  </div>
+                  <div class="col-md-4">
+                    <a href="{% url 'projectapp:graphics' %}" class="dropdown-card">
+                      <img src="{% static 'images/sol2.jpg' %}" class="img-fluid" alt="Graphics & Print Design">
+                      <p class="dropdown-title">Graphics & Print Design</p>
+                    </a>
+                  </div>
+                  <div class="col-md-4">
+                    <a href="{% url 'projectapp:otherServices' %}" class="dropdown-card">
+                      <img src="{% static 'images/sol3.jpg' %}" class="img-fluid" alt="Other Services">
+                      <p class="dropdown-title">Other Services</p>
+                    </a>
+                  </div>
+                </div>
+            </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'projectapp:solutions' %}">Solutions</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'projectapp:testimonials' %}">Testimonials</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'projectapp:pricing' %}">Pricing</a>
+        </li>
+<!--                <li class="nav-item">-->
+<!--                  <a class="nav-link" href="#">About Us</a>-->
+<!--                </li>-->
+      </ul>
+
+        <!-- Mobile Order Now button -->
+      <div class="d-lg-none mt-3">
+        <a href="{% url 'projectapp:orderFlow' %}" type="button" class="btn order-button-nav">Order Now</a>
+      </div>
+
+    </div>
+
+    <!-- Order Now Button -->
+    <div class="d-none d-lg-block">
+<!--                <a href="#" type="button" class="btn order-button-nav" data-bs-toggle="modal" data-bs-target="#orderModalTreatment">Order Now</a>-->
+      <a href="{% url 'projectapp:orderFlow' %}" type="button" class="btn order-button-nav" >Order Now</a>
+    </div>
+  </div>
+</nav>

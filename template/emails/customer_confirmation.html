@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Order Confirmation</title>
+</head>
+<body>
+  <h2>Hi {{ order.full_name }},</h2>
+  <p>Thank you for your order! 🎉 We've received your presentation request and are working on it.</p>
+
+  <h3>Order Summary:</h3>
+  <ul>
+    <li><strong>Treatment:</strong> {{ order.treatment_name }}</li>
+    <li><strong>Slides:</strong> {{ order.delivery_slides }}</li>
+    <li><strong>Delivery Date:</strong> {{ order.delivery_date }}</li>
+<!--    <li><strong>Estimated Price:</strong> {{ order.estimated_price_range }}</li>-->
+  </ul>
+
+  <p>If you have any questions, just reply to this email.</p>
+  <p>– The VGDS Team</p>
+</body>
+</html>

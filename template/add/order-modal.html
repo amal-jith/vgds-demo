@@ -1,0 +1,834 @@
+
+{% load static %}
+
+
+
+
+
+  <div class="white-section">
+
+    <!--Treatment Modal-->
+    <div class="modal fade wizard-modal" id="orderModalTreatment" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false">
+
+      <div class="modal-dialog modal-dialog-centered custom-modal-width" > <!--custom-modal-width-->
+        <div class="modal-content" style="padding: 3.5rem 6.5rem;"> <!---->
+          <div class="modal-header border-0">
+            <h5 class="modal-title">Presentation Wizard</h5>
+            <button type="button" class="btn-close"  aria-label="Close"></button>
+          </div>
+          <div class="modal-body px-0">
+
+            <div class="row">
+
+              <!--Stepper-->
+              <div class="col-md-3 pe-md-4">
+                <div class="stepper">
+
+                  <div class="stepper-line"></div>
+
+                  <div class="step active">
+                    <div class="circle">1</div>
+                    <div class="step-content">
+                      <div class="step-title">Treatment</div>
+                      <div class="step-desc">Decide what you want to achieve</div>
+                    </div>
+                  </div>
+                  <div class="step">
+                    <div class="circle">2</div>
+                    <div class="step-content">
+                      <div class="step-title">Style</div>
+                      <div class="step-desc">Choose a style that fits your needs</div>
+                    </div>
+                  </div>
+                  <div class="step">
+                    <div class="circle">3</div>
+                    <div class="step-content">
+                      <div class="step-title">Delivery</div>
+                      <div class="step-desc">Step Description</div>
+                    </div>
+                  </div>
+                  <div class="step">
+                    <div class="circle">4</div>
+                    <div class="step-content">
+                      <div class="step-title">Files and Details</div>
+                      <div class="step-desc">Step Description</div>
+                    </div>
+                  </div>
+                  <div class="step">
+                    <div class="circle">5</div>
+                    <div class="step-content">
+                      <div class="step-title">Payment</div>
+                      <div class="step-desc">Step Description</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Main Step Content -->
+              <div class="col-md-9 "> <!--ps-md-5-->
+                <h1 class="treat-title">Select your Treatment</h1>
+
+                <div class="row mt-4">
+                  <div class="col-md-4 mb-4">
+                    <div class="card treatment-card h-100 active">
+                      <div class="card-icon">
+                        <img src="{% static 'icons/lightbulb.svg' %}" alt="icon">
+                      </div>
+                      <div class="card-body p-0">
+                        <p class="treat-title-1">Let us decide</p>
+                        <p class="treat-title-2">Let our designers choose the best treatment for your presentation.</p>
+                        <p class="treat-title-3"><span class="treat-price">$ 11-44</span> per slide</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4 mb-4">
+                    <div class="card treatment-card h-100">
+                      <div class="card-icon">
+                        <img src="{% static 'icons/wrench.svg' %}" alt="icon">
+                      </div>
+                      <div class="card-body p-0">
+                        <p class="treat-title-1">Fix up</p>
+                        <p class="treat-title-2">Let our designers choose the best treatment for your presentation.</p>
+                        <p class="treat-title-3"><span class="treat-price">$ 11</span> per slide</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4 mb-4">
+                    <div class="card treatment-card h-100">
+                      <div class="card-icon">
+                        <img src="{% static 'icons/palette.svg' %}" alt="icon">
+                      </div>
+                      <div class="card-body p-0">
+                        <p class="treat-title-1">Redesign</p>
+                        <p class="treat-title-2">Let our designers choose the best treatment for your presentation.</p>
+                        <p class="treat-title-3"><span class="treat-price">$ 28</span> per slide</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4 mb-4">
+                    <div class="card treatment-card h-100">
+                      <div class="card-icon">
+                        <img src="{% static 'icons/brush.svg' %}" alt="icon">
+                      </div>
+                      <div class="card-body p-0">
+                        <p class="treat-title-1">Redraw</p>
+                        <p class="treat-title-2">Let our designers choose the best treatment for your presentation.</p>
+                        <p class="treat-title-3"><span class="treat-price">$ 28</span> per slide</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4 mb-4">
+                    <div class="card treatment-card h-100">
+                      <div class="card-icon">
+                        <img src="{% static 'icons/sparkles.svg' %}" alt="icon">
+                      </div>
+                      <div class="card-body p-0">
+                        <p class="treat-title-1">Additional Design Services</p>
+                        <p class="treat-title-2">Let our designers choose the best treatment for your presentation.</p>
+                        <p class="treat-title-3"><span class="treat-price">$ 44</span> per slide</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+          <div class="modal-footer">
+
+            <div class="row w-100">
+              <div class="col-md-6">
+                <div class="price-info d-flex align-items-center gap-3">
+                  <div class="price-range">$11 – 44</div>
+                  <div class="price-info-other">
+                    <div class="text-muted">Estimated Price</div>
+                    <a href="#" class="small text-primary text-decoration-none">What does this mean?</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 d-flex justify-content-end gap-2 align-items-center">
+                <button class="btn previous-btn-disabled" data-bs-target="#orderModalTreatment" data-bs-toggle="modal">Previous</button>
+                <button class="btn next-btn" data-bs-target="#orderModalStyle" data-bs-toggle="modal">Next</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Style Modal -->
+    <div class="modal fade wizard-modal" id="orderModalStyle" tabindex="-1" aria-hidden="true">
+
+      <div class="modal-dialog modal-dialog-centered custom-modal-width" > <!--custom-modal-width-->
+        <div class="modal-content" style="padding: 3.5rem 6.5rem;"> <!---->
+          <div class="modal-header border-0">
+            <h5 class="modal-title">Presentation Wizard</h5>
+            <button type="button" class="btn-close"  aria-label="Close"></button>
+          </div>
+          <div class="modal-body px-0">
+
+            <div class="row">
+
+              <!--Stepper-->
+              <div class="col-md-3 pe-md-4">
+                <div class="stepper">
+
+                  <div class="stepper-line"></div>
+
+                  <div class="step active">
+                    <div class="circle">1</div>
+                    <div class="step-content">
+                      <div class="step-title">Treatment</div>
+                      <div class="step-desc">Decide what you want to achieve</div>
+                    </div>
+                  </div>
+                  <div class="step active">
+                    <div class="circle">2</div>
+                    <div class="step-content">
+                      <div class="step-title">Style</div>
+                      <div class="step-desc">Choose a style that fits your needs</div>
+                    </div>
+                  </div>
+                  <div class="step">
+                    <div class="circle">3</div>
+                    <div class="step-content">
+                      <div class="step-title">Delivery</div>
+                      <div class="step-desc">Step Description</div>
+                    </div>
+                  </div>
+                  <div class="step">
+                    <div class="circle">4</div>
+                    <div class="step-content">
+                      <div class="step-title">Files and Details</div>
+                      <div class="step-desc">Step Description</div>
+                    </div>
+                  </div>
+                  <div class="step">
+                    <div class="circle">5</div>
+                    <div class="step-content">
+                      <div class="step-title">Payment</div>
+                      <div class="step-desc">Step Description</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Main Step Content -->
+              <div class="col-md-9 "> <!--ps-md-5-->
+                <h1 class="treat-title">Choose your preferred style</h1>
+
+                <div class="row mt-4">
+                  <div class="col-md-6 mb-4">
+                    <div class="card style-card h-100 active">
+                      <div class="row h-100">
+                        <div class="col-md-6 d-flex flex-column justify-content-center">
+                            <p class="treat-title-1">Own Style</p>
+                            <p class="treat-title-2">Upload your own template here and any supporting files in Step 4.</p>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="card upload-card h-100">
+                            <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                              <div class="upload-icon mb-2">
+                                <img src="{% static 'icons/vector.svg' %}" alt="Upload Icon" style="height: 1.25rem; width: 1.25rem;">
+                              </div>
+                              <h5 class="upload-title">Choose a file</h5>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-4">
+                    <div class="card style-card h-100 active">
+                      <div class="row h-100">
+                        <div class="col-md-6 d-flex flex-column justify-content-center">
+                            <p class="treat-title-1">Creative</p>
+                            <p class="treat-title-2">Bold and vibrant design choices that highlight your ideas and data.</p>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="card type-card h-100 border-0" style="height: 10rem;">
+                            <div class="type-card-bg" style="background-image: url('{% static 'images/type1.png' %}');"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-4">
+                    <div class="card style-card h-100">
+                      <div class="row h-100">
+                        <div class="col-md-6 d-flex flex-column justify-content-center">
+                            <p class="treat-title-1">Corporate</p>
+                            <p class="treat-title-2">Crisp and clean, putting your data as the focal point.</p>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="card type-card h-100 border-0" style="height: 10rem;">
+                            <div class="type-card-bg" style="background-image: url('{% static 'images/image30.png' %}');"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-4">
+                    <div class="card style-card h-100">
+                      <div class="row h-100">
+                        <div class="col-md-6 d-flex flex-column justify-content-center">
+                            <p class="treat-title-1">Playful</p>
+                            <p class="treat-title-2">Liven up rigid content with enjoyable illustrations and graphics.</p>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="card type-card h-100 border-0" style="height: 10rem;">
+                            <div class="type-card-bg" style="background-image: url('{% static 'images/image31.png' %}');"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+          <div class="modal-footer">
+
+            <div class="row w-100">
+              <div class="col-md-6">
+                <div class="price-info d-flex align-items-center gap-3">
+                  <div class="price-range">$11 – 44</div>
+                  <div class="price-info-other">
+                    <div class="text-muted">Estimated Price</div>
+                    <a href="#" class="small text-primary text-decoration-none">What does this mean?</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 d-flex justify-content-end gap-2 align-items-center">
+                <button class="btn previous-btn" data-bs-target="#orderModalTreatment" data-bs-toggle="modal" data-bs-dismiss="modal">Previous</button>
+                <button class="btn next-btn" data-bs-target="#orderModalDelivery" data-bs-toggle="modal">Next</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!--Delivery Modal-->
+    <div class="modal fade wizard-modal" id="orderModalDelivery" tabindex="-1" aria-hidden="true">
+
+      <div class="modal-dialog modal-dialog-centered custom-modal-width" > <!--custom-modal-width-->
+        <div class="modal-content" style="padding: 3.5rem 6.5rem;"> <!---->
+          <div class="modal-header border-0">
+            <h5 class="modal-title">Presentation Wizard</h5>
+            <button type="button" class="btn-close"  aria-label="Close"></button>
+          </div>
+          <div class="modal-body px-0">
+
+            <div class="row">
+
+              <!--Stepper-->
+              <div class="col-md-3 pe-md-4">
+                <div class="stepper">
+
+                  <div class="stepper-line"></div>
+
+                  <div class="step active">
+                    <div class="circle">1</div>
+                    <div class="step-content">
+                      <div class="step-title">Treatment</div>
+                      <div class="step-desc">Decide what you want to achieve</div>
+                    </div>
+                  </div>
+                  <div class="step active">
+                    <div class="circle">2</div>
+                    <div class="step-content">
+                      <div class="step-title">Style</div>
+                      <div class="step-desc">Choose a style that fits your needs</div>
+                    </div>
+                  </div>
+                  <div class="step active">
+                    <div class="circle">3</div>
+                    <div class="step-content">
+                      <div class="step-title">Delivery</div>
+                      <div class="step-desc">Step Description</div>
+                    </div>
+                  </div>
+                  <div class="step">
+                    <div class="circle">4</div>
+                    <div class="step-content">
+                      <div class="step-title">Files and Details</div>
+                      <div class="step-desc">Step Description</div>
+                    </div>
+                  </div>
+                  <div class="step">
+                    <div class="circle">5</div>
+                    <div class="step-content">
+                      <div class="step-title">Payment</div>
+                      <div class="step-desc">Step Description</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Main Step Content -->
+              <div class="col-md-9 "> <!--ps-md-5-->
+
+                <div class="card delivery-card">
+                  <div class="card-body p-0">
+                    <h1 class="delivery-title">How many slides would you like designed?</h1>
+                    <div class="number-input">
+                      <button class="minus p-0">-</button>
+                      <input type="text" value="34" class="number-value">
+                      <button class="plus p-0">+</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card delivery-card" style="margin-top: 3.5rem;">
+                  <div class="card-body p-0">
+                    <h1 class="delivery-title">How many slides would you like designed?</h1>
+                    <h3 class="delivery-desc">The date shown is when the first draft is delivered. Revisions are done within 1 business day.
+                      Price depends on your chosen deadline. Your first draft will be delivered before <span class="delivery-desc-1">21:00 on 8th April.</span>
+                    </h3>
+                    <div class="d-flex gap-3 flex-wrap">
+                        <div class="card date-card active">
+                          <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                            <h1 class="date-title text-center">08 Apr</h1>
+                            <h3 class="date-subtitle text-center">$16-$66 per slide</h3>
+                          </div>
+                        </div>
+                        <div class="card date-card active">
+                          <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                            <h1 class="date-title text-center">09 Apr</h1>
+                            <h3 class="date-subtitle text-center">$13-$54 per slide</h3>
+                          </div>
+                        </div>
+                        <div class="card date-card active">
+                          <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                            <h1 class="date-title text-center">10 Apr</h1>
+                            <h3 class="date-subtitle text-center">$11-$44 per slide</h3>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card delivery-card" style="margin-top: 3.5rem;">
+                  <div class="card-body p-0">
+                    <h1 class="delivery-title">Need our wordsmiths to banish typos?(optional)</h1>
+                    <h3 class="delivery-desc">Please note that we only offer this service in English. If you do not select proofreading or
+                      editing, we will not make any changes to your content. This includes things like typos or spacing errors.
+                    </h3>
+
+                    <div class="d-flex gap-3 flex-wrap">
+
+                      <div class="card delivery-card-1">
+                        <div class="row g-0">
+                          <div class="col-md-2">
+                            <img src="{% static 'icons/search-check.svg' %}" class="img-fluid rounded-start" alt="...">
+                          </div>
+                          <div class="col-md-10">
+                            <div class="card-body p-0">
+                              <h5 class="delivery-title-1">Proofreading</h5>
+                              <h5 class="delivery-title-2">We check your content for grammar and misspelling. </h5>
+                              <h5 class="delivery-title-3"><span class="delivery-title-4">$ 1</span> per side</h5>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card delivery-card-1">
+                        <div class="row g-0">
+                          <div class="col-md-2">
+                            <img src="{% static 'icons/pencil.svg' %}" class="img-fluid rounded-start" alt="...">
+                          </div>
+                          <div class="col-md-10">
+                            <div class="card-body p-0">
+                              <h5 class="delivery-title-1">Editing</h5>
+                              <h5 class="delivery-title-2">We rewrite any content on your slides that is unclear. </h5>
+                              <h5 class="delivery-title-3"><span class="delivery-title-4">$ 3</span> per side</h5>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card delivery-card-1">
+                        <div class="row g-0">
+                          <div class="col-md-2">
+                            <img src="{% static 'icons/ban.svg' %}" class="img-fluid rounded-start" alt="...">
+                          </div>
+                          <div class="col-md-10">
+                            <div class="card-body p-0">
+                              <h5 class="delivery-title-1">No Thanks</h5>
+                              <h5 class="delivery-title-2">My contented is vetted and I don’t need proofreading/editing.</h5>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+
+            <div class="row w-100">
+              <div class="col-md-6">
+                <div class="price-info d-flex align-items-center gap-3">
+                  <div class="price-range">$374- 1496</div>
+                  <div class="price-info-other">
+                    <div class="text-muted">Estimated Price</div>
+                    <a href="#" class="small text-primary text-decoration-none">What does this mean?</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 d-flex justify-content-end gap-2 align-items-center">
+                <button class="btn previous-btn" data-bs-target="#orderModalStyle" data-bs-toggle="modal" data-bs-dismiss="modal">Previous</button>
+                <button class="btn next-btn" data-bs-target="#orderModalFilesDetails" data-bs-toggle="modal">Next</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+   <!--Files and Details Modal-->
+    <div class="modal fade wizard-modal" id="orderModalFilesDetails" tabindex="-1" aria-hidden="true">
+
+      <div class="modal-dialog modal-dialog-centered custom-modal-width" > <!--custom-modal-width-->
+        <div class="modal-content" style="padding: 3.5rem 6.5rem;"> <!---->
+          <div class="modal-header border-0">
+            <h5 class="modal-title">Presentation Wizard</h5>
+            <button type="button" class="btn-close"  aria-label="Close"></button>
+          </div>
+          <div class="modal-body px-0">
+
+            <div class="row">
+
+              <!--Stepper-->
+              <div class="col-md-3 pe-md-4">
+                <div class="stepper">
+
+                  <div class="stepper-line"></div>
+
+                  <div class="step active">
+                    <div class="circle">1</div>
+                    <div class="step-content">
+                      <div class="step-title">Treatment</div>
+                      <div class="step-desc">Decide what you want to achieve</div>
+                    </div>
+                  </div>
+                  <div class="step active">
+                    <div class="circle">2</div>
+                    <div class="step-content">
+                      <div class="step-title">Style</div>
+                      <div class="step-desc">Choose a style that fits your needs</div>
+                    </div>
+                  </div>
+                  <div class="step active">
+                    <div class="circle">3</div>
+                    <div class="step-content">
+                      <div class="step-title">Delivery</div>
+                      <div class="step-desc">Step Description</div>
+                    </div>
+                  </div>
+                  <div class="step active">
+                    <div class="circle">4</div>
+                    <div class="step-content">
+                      <div class="step-title">Files and Details</div>
+                      <div class="step-desc">Step Description</div>
+                    </div>
+                  </div>
+                  <div class="step">
+                    <div class="circle">5</div>
+                    <div class="step-content">
+                      <div class="step-title">Payment</div>
+                      <div class="step-desc">Step Description</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Main Step Content -->
+              <div class="col-md-9 "> <!--ps-md-5-->
+
+                <div class="card delivery-card">
+                  <div class="card-body p-0">
+                    <h1 class="delivery-title">Upload your files</h1>
+                    <div class="card upload-card-1 h-100">
+                      <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                        <div class="upload-icon mb-2">
+                          <img src="{% static 'icons/vector.svg' %}" alt="Upload Icon" style="height: 1.25rem; width: 1.25rem;">
+                        </div>
+                        <h5 class="upload-title">Choose a file</h5>
+                      </div>
+                    </div>
+                    <div class="card border-0 bg-transparent" style="margin-top: 1.5rem;">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="checkDefault1">
+                        <label class="form-check-label" for="checkDefault">
+                          I’m using Google Slides and will provide a link in the section below.
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card delivery-card" style="margin-top: 3.5rem;">
+                  <div class="card-body p-0">
+                    <h1 class="delivery-title">Your Brief</h1>
+                    <h3 class="delivery-desc">Make sure to include comments regarding specific slides, ideas or requests.
+                      Clear and concise information could help smoothen the process. Please add as many details as possible,
+                      as it will help us produce your first draft.
+                    </h3>
+                    <div class="mb-3">
+                      <label for="exampleFormControlTextarea1" class="form-label">Instructions *</label>
+                      <textarea class="form-control type-links" id="exampleFormControlTextarea12" rows="6" placeholder="Type your links here"></textarea>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+
+            <div class="row w-100">
+              <div class="col-md-6">
+                <div class="price-info d-flex align-items-center gap-3">
+                  <div class="price-range">$578- 2278</div>
+                  <div class="price-info-other">
+                    <div class="text-muted">Estimated Price</div>
+                    <a href="#" class="small text-primary text-decoration-none">What does this mean?</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 d-flex justify-content-end gap-2 align-items-center">
+                <button class="btn previous-btn" data-bs-target="#orderModalDelivery" data-bs-toggle="modal" data-bs-dismiss="modal">Previous</button>
+                <button class="btn next-btn" data-bs-target="#orderModalPayment" data-bs-toggle="modal">Next</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+   <!--Payment Modal-->
+    <div class="modal fade wizard-modal" id="orderModalPayment" tabindex="-1" aria-hidden="true">
+
+      <div class="modal-dialog modal-dialog-centered custom-modal-width" > <!--custom-modal-width-->
+        <div class="modal-content" style="padding: 3.5rem 6.5rem;"> <!---->
+          <div class="modal-header border-0">
+            <h5 class="modal-title">Presentation Wizard</h5>
+            <button type="button" class="btn-close"  aria-label="Close"></button>
+          </div>
+          <div class="modal-body px-0">
+
+            <div class="row">
+
+              <!--Stepper-->
+              <div class="col-md-3 pe-md-4">
+                <div class="stepper">
+
+                  <div class="stepper-line"></div>
+
+                  <div class="step active">
+                    <div class="circle">1</div>
+                    <div class="step-content">
+                      <div class="step-title">Treatment</div>
+                      <div class="step-desc">Decide what you want to achieve</div>
+                    </div>
+                  </div>
+                  <div class="step active">
+                    <div class="circle">2</div>
+                    <div class="step-content">
+                      <div class="step-title">Style</div>
+                      <div class="step-desc">Choose a style that fits your needs</div>
+                    </div>
+                  </div>
+                  <div class="step active">
+                    <div class="circle">3</div>
+                    <div class="step-content">
+                      <div class="step-title">Delivery</div>
+                      <div class="step-desc">Step Description</div>
+                    </div>
+                  </div>
+                  <div class="step active">
+                    <div class="circle">4</div>
+                    <div class="step-content">
+                      <div class="step-title">Files and Details</div>
+                      <div class="step-desc">Step Description</div>
+                    </div>
+                  </div>
+                  <div class="step active">
+                    <div class="circle">5</div>
+                    <div class="step-content">
+                      <div class="step-title">Payment</div>
+                      <div class="step-desc">Step Description</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Main Step Content -->
+              <div class="col-md-9 "> <!--ps-md-5-->
+
+                <div class="card delivery-card">
+                  <div class="card-body p-0">
+                    <h1 class="delivery-title">Personal Information</h1>
+                    <div class="personal-pay">
+                      <div class="row g-2 personal-row">
+                        <div class="col-md">
+                          <div class="">
+                            <label for="exampleFormControlInput1" class="form-label">Full Name</label>
+                            <input type="email" class="form-control payment-field" id="exampleFormControlInput12">
+                          </div>
+                        </div>
+                        <div class="col-md">
+                          <div class="">
+                            <label for="exampleFormControlInput1" class="form-label">Email</label>
+                            <input type="email" class="form-control payment-field" id="exampleFormControlInput122">
+                          </div>
+                        </div>
+                        <div class="row g-2 personal-row">
+                          <div class="col-md">
+                            <div class="">
+                              <label for="exampleFormControlInput1" class="form-label">Phone Number</label>
+                              <input type="email" class="form-control payment-field" id="exampleFormControlInput122">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="promo-code-div">
+                      <div class="accordion promo-container" id="promoAccordion">
+                        <div class="accordion-item promo-item">
+                          <h2 class="accordion-header promo-header">
+                            <button class="accordion-button promo-button" type="button" data-bs-toggle="collapse" data-bs-target="#promoCollapse" aria-expanded="false" aria-controls="promoCollapse">
+                              <img src="{% static 'icons/tag.svg' %}" alt="Favorite Icon" style="width: 1rem; height: 1rem; margin-right: 1rem;">
+                              I have a promocode
+                            </button>
+                          </h2>
+                          <div id="promoCollapse" class="accordion-collapse collapse promo-collapse" data-bs-parent="#promoAccordion">
+                            <div class="accordion-body promo-body">
+                              <div class="input-group promo-input-group mb-3">
+                                <input type="text" class="form-control promo-input" placeholder="Enter your coupon code" aria-label="Coupon Code">
+                                <button class="btn btn-primary promo-apply-btn" type="button">Apply Coupon</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </div>
+                </div>
+
+                <div class="card delivery-card">
+                  <div class="card-body p-0">
+                    <h1 class="delivery-title">Finalization</h1>
+                    <h3 class="delivery-desc">After you have submitted your order, our team of designers will look at the
+                      brief and get back to you with a final quote for your order. We will not charge your credit card until you have approved the final order.
+                    </h3>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="checkDefault1">
+                      <label class="form-check-label" for="checkDefault">
+                        <span class="payment-check">I agree to the <span class="terms-text">Terms and Conditions</span> and <span class="terms-text">Data Processing Agreement</span></span>
+                      </label>
+                    </div>
+                    <div class="form-check mt-2">
+                      <input class="form-check-input" type="checkbox" value="" id="checkDefault1">
+                      <label class="form-check-label" for="checkDefault">
+                        Yes, I’d like to receive emails occasionally about new services and offers.
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+
+            <div class="row w-100">
+              <div class="col-md-6">
+                <div class="price-info d-flex align-items-center gap-3">
+                  <div class="price-range">$578- 2278</div>
+                  <div class="price-info-other">
+                    <div class="text-muted">Estimated Price</div>
+                    <a href="#" class="small text-primary text-decoration-none">What does this mean?</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 d-flex justify-content-end gap-2 align-items-center">
+                <button class="btn previous-btn" data-bs-target="#orderModalFilesDetails" data-bs-toggle="modal" data-bs-dismiss="modal">Previous</button>
+                <button class="btn submit-my-btn" data-bs-target="#orderSuccess" data-bs-toggle="modal">Submit my Order</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+
+  </div>
+
+
+  <!--Success modal-->
+
+      <div class="modal fade"  id="orderSuccess" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content success-modal p-0">
+            <div class="card success-card">
+              <img src="{% static 'icons/charm_circle-tick.svg' %}" class="card-img-top success-img" alt="...">
+              <div class="card-body p-0">
+                <h1 class="success-title">Order Submitted Successfully</h1>
+                <h4 class="success-sub">Please check your email within a few hours for confirmation!</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+  <!--Close Confirmation modal-->
+
+      <div class="modal fade"  id="confirmCloseModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content close-modal p-0">
+            <div class="card close-card">
+              <div class="card-body p-0">
+                <h1 class="close-title">Are you sure you want to close the Presentation Wizard?</h1>
+                <div class="d-flex justify-content-center gap-3 mt-3">
+                <button type="button" class="btn yes-close-btn" id="confirmCloseWizard">Yes, Close</button>
+                <button type="button" class="btn no-close-btn" id="cancelCloseWizard">No, Let me Order</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+

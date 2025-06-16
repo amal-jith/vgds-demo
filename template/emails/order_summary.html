@@ -1,0 +1,15 @@
+<h2>New Presentation Order</h2>
+<p><strong>Name:</strong> {{ order.full_name }}</p>
+<p><strong>Email:</strong> {{ order.email }}</p>
+<p><strong>Phone:</strong> {{ order.phone }}</p>
+<p><strong>Promo Code:</strong> {{ order.promo_code }}</p>
+<p><strong>Delivery Date:</strong> {{ order.delivery_date }}</p>
+<p><strong>Slides:</strong> {{ order.delivery_slides }}</p>
+<p><strong>Estimated Price:</strong> {{ order.estimated_price_range }}</p>
+<p><strong>Google Link:</strong> {{ order.google_link }}</p>
+{% if order.presentation_file %}
+  <p><strong>Presentation File:</strong> {{ order.presentation_file.url }}</p>
+{% endif %}
+{% if order.style_file %}
+  <p><strong>Style File:</strong> {{ order.style_file.url }}</p>
+{% endif %}
